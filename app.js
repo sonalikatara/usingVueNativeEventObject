@@ -11,7 +11,7 @@ const app = Vue.createApp({
         setTimeout(()=>{
             this.number = 0;
         },5000 )
-      }
+      
   },
 
   computed: {
