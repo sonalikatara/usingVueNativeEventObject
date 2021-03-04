@@ -1,22 +1,35 @@
 const app = Vue.createApp({
   data() {
-    return {
-      counter: 0,
-      name: ''
-    };
+    return{
+      number: 0,
+    }
   },
+
+  watch:{
+      result(){
+        
+        setTimeout(()=>{
+            this.number = 0;
+        },5000 )
+      }
+  },
+
+  computed: {
+    result(){
+      if(this.number > 37 ){
+        return "Too much!";
+      } else if(this.number ===37){
+        return "37"
+      }
+      return 'Not there yet'
+    }
+  },
+
   methods: {
-    setName(event, lastName) {
-      this.name = event.target.value + ' ' + lastName;
-    },
-    add(num) {
-      this.counter = this.counter + num;
-    },
-    reduce(num) {
-      this.counter = this.counter - num;
-      // this.counter--;
+    add(num){
+      this.number+=num;
     }
   }
 });
 
-app.mount('#events');
+app.mount('#assignment');
